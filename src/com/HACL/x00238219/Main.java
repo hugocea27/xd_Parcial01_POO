@@ -8,7 +8,7 @@ public class Main {
         String opc; int opcValidada;
         do{
             System.out.println(mainMenu());
-            System.out.println("Opcion: ");opc=in.nextLine();
+            System.out.print("Opcion: ");opc=in.nextLine();
             try{
                 opcValidada=Integer.parseInt(opc);
                 switch (opcValidada){
@@ -21,6 +21,7 @@ public class Main {
                 opcValidada=0;
                 System.out.println("Ingrese una opción correcta");
             }
+            System.out.println(" ");
         }while(opcValidada!=4);
     }
 
@@ -32,11 +33,11 @@ public class Main {
     static void calcularServicioProfesional(){
         boolean continuar; double salarioValidado = 0; int mesesContValidados=0;
 
-        System.out.println("Ingrese su nombre: "); String nombre = in.nextLine();
-        System.out.println("Ingrese su puesto "); String puesto = in.nextLine();
+        System.out.print("Ingrese su nombre: "); String nombre = in.nextLine();
+        System.out.print("Ingrese su puesto: "); String puesto = in.nextLine();
 
         do{
-            System.out.println("Ingrese su salario"); String salario = in.nextLine();
+            System.out.print("Ingrese su salario: "); String salario = in.nextLine();
             try{
                 salarioValidado=Double.parseDouble(salario);
                 continuar=true;
@@ -48,7 +49,7 @@ public class Main {
         }while(!continuar);
 
         do{
-            System.out.println("Ingrese sus meses contratados"); String mesesContratados = in.nextLine();
+            System.out.print("Ingrese sus meses contratados: "); String mesesContratados = in.nextLine();
             try{
                 mesesContValidados=Integer.parseInt(mesesContratados);
                 continuar=true;
@@ -62,16 +63,17 @@ public class Main {
         ServivicioProfesional emp = new ServivicioProfesional(nombre, puesto, salarioValidado, mesesContValidados);
 
         System.out.println("Su pago total es "+CalculadoraImpuestos.calcularPago(emp));
+
     }
 
     static void calcularPlazafija(){
         boolean continuar; double salarioValidado = 0; int extenValidada=0;
 
-        System.out.println("Ingrese su nombre: "); String nombre = in.nextLine();
-        System.out.println("Ingrese su puesto "); String puesto = in.nextLine();
+        System.out.print("Ingrese su nombre: "); String nombre = in.nextLine();
+        System.out.print("Ingrese su puesto: "); String puesto = in.nextLine();
 
         do{
-            System.out.println("Ingrese su salario"); String salario = in.nextLine();
+            System.out.print("Ingrese su salario: "); String salario = in.nextLine();
             try{
                 salarioValidado=Double.parseDouble(salario);
                 continuar=true;
@@ -83,7 +85,7 @@ public class Main {
         }while(!continuar);
 
         do{
-            System.out.println("Ingrese sus extensión"); String extencion = in.nextLine();
+            System.out.print("Ingrese sus extensión: "); String extencion = in.nextLine();
             try{
                 extenValidada=Integer.parseInt(extencion);
                 continuar=true;
